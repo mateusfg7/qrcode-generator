@@ -26,18 +26,14 @@ function download() {
 </script>
 
 <template>
-  <div class="h-screen flex justify-center items-center">
-    <div class="border border-red-600 w-2/3 h-2/3 flex">
-      <div class="border border-red-600 w-2/3 h-full flex items-center justify-center">
-        <textarea
-          v-model="qrcodeValue"
-          class="w-full h-28 resize-none"
-          placeholder="Write your text here..."
-        />
+  <div class="flex items-center justify-center h-screen">
+    <div class="flex w-2/3 border border-red-600 h-2/3">
+      <div class="flex items-center justify-center w-2/3 h-full border border-red-600">
+        <textarea v-model="qrcodeValue" class="w-full resize-none h-28" placeholder="Write your text here..." />
       </div>
-      <div class="border border-red-600 flex-1 flex items-center justify-center flex-col p-4 gap-3">
+      <div class="flex flex-col items-center justify-center flex-1 gap-3 p-4 border border-red-600">
         <VueQrcode :value="qrcodeValue" tag="svg" :options="{ margin: 0 }" @ready="setCanvasRef" />
-        <button @click="download" class="bg-blue-400 p-4 rounded-md">Download Image</button>
+        <button @click="download" class="p-4 bg-blue-400 rounded-md">Download Image</button>
       </div>
     </div>
   </div>
