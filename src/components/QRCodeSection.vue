@@ -6,6 +6,7 @@ import { domToPng } from 'modern-screenshot'
 import { Download } from 'lucide-vue-next'
 
 import { qrcodeValue } from '../lib/qrcodeValue'
+import { color } from '../lib/colors'
 
 const qrcodeCanvas = ref<HTMLCanvasElement>()
 const qrcodeSVG = ref<SVGAElement>()
@@ -15,10 +16,7 @@ const format = ref('PNG')
 const options = {
   margin: 0,
   width: 300,
-  color: {
-    dark: '#000000ff',
-    light: '#ffffffff'
-  }
+  color
 }
 
 function setSVGRef(svg: SVGAElement) {
@@ -71,7 +69,7 @@ function handleDownload() {
   <div
     class="flex flex-col items-center justify-center flex-1 gap-3 p-4 bg-white shadow-lg rounded-xl"
   >
-    <VueQrcode :value="qrcodeValue" :options="options" @ready="setCanvasRef" />
+    <VueQrcode :value="qrcodeValue ?? 'Mateus'" :options="options" @ready="setCanvasRef" />
     <VueQrcode
       :value="qrcodeValue"
       tag="svg"
