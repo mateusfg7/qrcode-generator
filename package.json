@@ -17,7 +17,8 @@
     "lucide-vue-next": "^0.279.0",
     "modern-screenshot": "^4.4.31",
     "qrcode": "^1.5.3",
-    "vue": "^3.3.4"
+    "vue": "^3.3.4",
+    "vue-accessible-color-picker": "^4.1.4"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.3.3",

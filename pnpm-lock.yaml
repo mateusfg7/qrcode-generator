@@ -20,6 +20,9 @@ dependencies:
   vue:
     specifier: ^3.3.4
     version: 3.3.4
+  vue-accessible-color-picker:
+    specifier: ^4.1.4
+    version: 4.1.4(vue@3.3.4)
 
 devDependencies:
   '@rushstack/eslint-patch':
@@ -3229,6 +3232,14 @@ packages:
       - supports-color
       - terser
     dev: true
+
+  /vue-accessible-color-picker@4.1.4(vue@3.3.4):
+    resolution: {integrity: sha512-uq5wPWiR+VeuaZGxWRKuZSKpf2WH1EHa0Oas+rsEdgw35zZ/zotpw5LvyMiqbAagpiHxCp0AzqwDkMJ7dSbGQA==}
+    peerDependencies:
+      vue: ^3.2.x
+    dependencies:
+      vue: 3.3.4
+    dev: false
 
   /vue-component-type-helpers@1.8.4:
     resolution: {integrity: sha512-6bnLkn8O0JJyiFSIF0EfCogzeqNXpnjJ0vW/SZzNHfe6sPx30lTtTXlE5TFs2qhJlAtDFybStVNpL73cPe3OMQ==}
