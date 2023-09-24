@@ -67,7 +67,7 @@ function handleDownload() {
 
 <template>
   <div
-    class="flex flex-col items-center justify-center flex-1 gap-3 p-4 bg-white shadow-lg rounded-xl"
+    class="flex flex-col items-center justify-center flex-1 gap-3 p-4 bg-white/50 shadow-lg rounded-xl"
   >
     <VueQrcode :value="qrcodeValue ?? 'Mateus'" :options="options" @ready="setCanvasRef" />
     <VueQrcode
