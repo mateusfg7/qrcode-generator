@@ -2,14 +2,15 @@
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 import { ref } from 'vue'
 
-const qrcodeValue = ref('QRCode Generator, by Mateus Felipe <contact@mateusf.com>')
+import { qrcodeValue } from './lib/qrcodeValue'
+
 const qrcodeSVG = ref<SVGAElement>()
 
-function setCanvasRef(svg: SVGAElement) {
+function setSVGRef(svg: SVGAElement) {
   qrcodeSVG.value = svg
 }
 
-function download() {
+function downloadSVG() {
   if (!qrcodeSVG.value) return
 
   const svgBlob = new Blob([qrcodeSVG.value.outerHTML], { type: 'image/svg+xml;charset=utf-8' })
@@ -27,13 +28,14 @@ function download() {
 
 <template>
   <div class="flex items-center justify-center h-screen">
-    <div class="flex w-2/3 border border-red-600 h-2/3">
-      <div class="flex items-center justify-center w-2/3 h-full border border-red-600">
-        <textarea v-model="qrcodeValue" class="w-full resize-none h-28" placeholder="Write your text here..." />
+    <div class="flex w-2/3 gap-5 h-2/3">
+      <div class="flex items-center justify-center w-2/3 h-full bg-white shadow-lg rounded-xl">
+        <textarea v-model="qrcodeValue" class="w-full bg-transparent resize-none h-44 focus:ring-0"
+          placeholder="Write your text here..." />
       </div>
-      <div class="flex flex-col items-center justify-center flex-1 gap-3 p-4 border border-red-600">
-        <VueQrcode :value="qrcodeValue" tag="svg" :options="{ margin: 0 }" @ready="setCanvasRef" />
-        <button @click="download" class="p-4 bg-blue-400 rounded-md">Download Image</button>
+      <div class="flex flex-col items-center justify-center flex-1 gap-3 p-4 bg-white shadow-lg rounded-xl">
+        <VueQrcode :value="qrcodeValue" tag="svg" :options="{ margin: 0 }" @ready="setSVGRef" />
+        <button @click="downloadSVG" class="p-4 bg-blue-400 rounded-md">Download Image</button>
       </div>
     </div>
   </div>
