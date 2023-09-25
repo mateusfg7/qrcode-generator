@@ -2,7 +2,7 @@
 import { type ColorChangeEvent } from 'vue-accessible-color-picker'
 import { color } from '../lib/colors'
 
-import ColorPickerDropdown from './ColorPickerDropdown.vue'
+import ColorPickerDialog from './ColorPickerDialog.vue'
 
 function updateDarkColor(eventData: ColorChangeEvent) {
   color.dark = eventData.cssColor
@@ -18,12 +18,12 @@ function updateLightColor(eventData: ColorChangeEvent) {
       <span>Background</span>
     </div>
     <div class="flex flex-col gap-3">
-      <ColorPickerDropdown
+      <ColorPickerDialog
         id="color-picker-dark"
         :color="color.dark"
         :on-color-change="updateDarkColor"
       />
-      <ColorPickerDropdown
+      <ColorPickerDialog
         id="color-picker-light"
         :color="color.light"
         :on-color-change="updateLightColor"
