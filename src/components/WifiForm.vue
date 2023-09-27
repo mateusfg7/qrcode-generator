@@ -18,7 +18,12 @@ watch([ssid, hidden, password, encryption], () => {
     <div class="flex gap-4">
       <div class="flex flex-col gap-4">
         <label class="h-10 flex-1 flex items-center" for="ssid">SSID</label>
-        <label class="h-10 flex-1 flex items-center" for="password">Password</label>
+        <label
+          :data-is-disabled="encryption === 'nopass'"
+          class="h-10 flex-1 flex items-center data-[is-disabled='true']:opacity-25 transition-opacity"
+          for="password"
+          >Password</label
+        >
         <span class="h-10 flex-1 flex items-center">Encryption</span>
       </div>
       <div class="flex-1 flex flex-col gap-4">
@@ -41,10 +46,11 @@ watch([ssid, hidden, password, encryption], () => {
           </div>
         </div>
         <input
-          class="rounded-md flex-1 bg-white/50 px-2 h-10 transition-colors leading-none border-none focus:ring-blue-800/50 focus:bg-white/90"
+          class="rounded-md flex-1 bg-white/50 px-2 h-10 transition-all leading-none border-none focus:ring-blue-800/50 focus:bg-white/90 disabled:opacity-25"
           type="password"
           id="password"
           placeholder="SuPeR@sEcReT$PaSsWoRd$123%"
+          :disabled="encryption === 'nopass'"
           v-model="password"
         />
         <div class="h-10 flex items-center gap-5">
