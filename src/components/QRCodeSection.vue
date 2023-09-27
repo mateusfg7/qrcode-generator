@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { computed, ref } from 'vue'
 import VueQrcode from '@chenfengyuan/vue-qrcode'
 import { domToPng } from 'modern-screenshot'
 
@@ -7,6 +7,12 @@ import { Download } from 'lucide-vue-next'
 
 import { qrcodeValue } from '../lib/qrcodeValue'
 import { color } from '../lib/colors'
+
+const localQRCodeValue = computed(() => {
+  if (qrcodeValue.value.length > 0) return qrcodeValue.value
+
+  return 'QRCode Generator, by Mateus Felipe <contact@mateusf.com>.'
+})
 
 const qrcodeCanvas = ref<HTMLCanvasElement>()
 const qrcodeSVG = ref<SVGAElement>()
@@ -69,9 +75,9 @@ function handleDownload() {
   <div
     class="flex flex-col items-center justify-center flex-1 gap-3 p-4 bg-white/50 shadow-lg rounded-xl"
   >
-    <VueQrcode :value="qrcodeValue ?? 'Mateus'" :options="options" @ready="setCanvasRef" />
+    <VueQrcode :value="localQRCodeValue" :options="options" @ready="setCanvasRef" />
     <VueQrcode
-      :value="qrcodeValue"
+      :value="localQRCodeValue"
       tag="svg"
       :options="options"
       @ready="setSVGRef"
