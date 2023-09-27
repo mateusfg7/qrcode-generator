@@ -2,7 +2,6 @@
 import type { QRCodeFormat } from '@/lib/qrcodeFormat'
 import { qrcodeFormat, setQrcodeFormat } from '@/lib/qrcodeFormat'
 import type { PropType } from 'vue'
-import { type Icon as IconType } from 'lucide-vue-next'
 
 defineProps({
   format: {
