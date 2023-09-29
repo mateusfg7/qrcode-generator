@@ -11,7 +11,7 @@ import QRCodeSection from './components/QRCodeSection.vue'
     <div
       class="bg-blue-600/20 h-[500px] w-[500px] -z-20 rounded-full absolute top-[300px] left-[700px] blur-[100px]"
     />
-    <div class="flex w-2/3 gap-5 h-fit">
+    <div class="flex w-[70%] gap-5 h-fit">
       <ConfigSection />
       <QRCodeSection />
     </div>
