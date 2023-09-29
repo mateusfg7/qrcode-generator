@@ -12,17 +12,18 @@ function updateLightColor(eventData: ColorChangeEvent) {
 }
 </script>
 <template>
-  <div class="flex gap-5">
-    <div class="text-lg flex flex-col gap-3">
+  <div class="flex gap-6">
+    <div class="flex gap-3 items-center">
       <span>Foreground</span>
-      <span>Background</span>
-    </div>
-    <div class="flex flex-col gap-3">
       <ColorPickerDialog
         id="color-picker-dark"
         :color="color.dark"
         :on-color-change="updateDarkColor"
       />
+    </div>
+    <div class="flex gap-3 items-center">
+      <span>Background</span>
+
       <ColorPickerDialog
         id="color-picker-light"
         :color="color.light"
