@@ -21,8 +21,13 @@ const format = ref('PNG')
 
 const options = {
   margin: 0,
-  width: 300,
+  width: 320,
   color
+}
+
+const downloadOptions = {
+  ...options,
+  width: 500
 }
 
 function setSVGRef(svg: SVGAElement) {
@@ -73,32 +78,36 @@ function handleDownload() {
 
 <template>
   <div
-    class="flex flex-col items-center justify-center flex-1 gap-3 p-4 bg-white/50 shadow-lg rounded-xl"
+    class="flex flex-col items-center justify-between flex-1 gap-8 p-4 bg-white/50 shadow-lg rounded-xl"
   >
-    <VueQrcode :value="localQRCodeValue" :options="options" @ready="setCanvasRef" />
-    <VueQrcode
-      :value="localQRCodeValue"
-      tag="svg"
-      :options="options"
-      @ready="setSVGRef"
-      class="hidden"
-    />
-    <div class="w-full">
-      <span class="text-sm text-black/50">File Format</span>
-      <select
-        v-model="format"
-        class="w-full cursor-pointer rounded-md border-black/30 hover:border-black focus:ring-0 transition-colors"
-      >
-        <option value="PNG">PNG</option>
-        <option value="SVG">SVG</option>
-      </select>
+    <div class="flex-1 flex items-center">
+      <VueQrcode :value="localQRCodeValue" :options="options" @ready="setCanvasRef" />
+      <VueQrcode
+        :value="localQRCodeValue"
+        :options="downloadOptions"
+        tag="svg"
+        @ready="setSVGRef"
+        class="hidden"
+      />
     </div>
-    <button
-      @click="handleDownload"
-      class="p-3 w-full leading-none flex gap-2 items-center justify-center transition-colors rounded-md hover:bg-blue-800 hover:text-white bg-blue-800/20 text-blue-800"
-    >
-      <Download />
-      <span>Download</span>
-    </button>
+    <div class="w-full space-y-3">
+      <div class="w-full">
+        <span class="text-sm text-black/50">File Format</span>
+        <select
+          v-model="format"
+          class="w-full cursor-pointer rounded-md border-black/30 hover:border-black focus:ring-0 transition-colors"
+        >
+          <option value="PNG">PNG</option>
+          <option value="SVG">SVG</option>
+        </select>
+      </div>
+      <button
+        @click="handleDownload"
+        class="p-3 w-full leading-none flex gap-2 items-center justify-center transition-colors rounded-md hover:bg-blue-800 hover:text-white bg-blue-800/20 text-blue-800"
+      >
+        <Download />
+        <span>Download</span>
+      </button>
+    </div>
   </div>
 </template>
