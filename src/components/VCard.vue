@@ -55,7 +55,7 @@ END:VCARD`
 </script>
 
 <template>
-  <div class="flex-1 pt-4 overflow-y-scroll">
+  <div class="flex-1 pt-4">
     <div class="flex-1 flex flex-col gap-4">
       <div class="flex">
         <label class="h-8 w-[30%] flex items-center" for="name">Your name</label>
