@@ -15,7 +15,7 @@
   "dependencies": {
     "@chenfengyuan/vue-qrcode": "^2.0.0",
     "@headlessui/vue": "^1.7.16",
-    "lucide-vue-next": "^0.279.0",
+    "lucide-vue-next": "^0.294.0",
     "modern-screenshot": "^4.4.31",
     "qrcode": "^1.5.3",
     "vue": "^3.3.4",
