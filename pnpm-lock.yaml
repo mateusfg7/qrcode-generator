@@ -33,7 +33,7 @@ devDependencies:
     version: 1.4.0
   '@tailwindcss/forms':
     specifier: ^0.5.6
-    version: 0.5.7(tailwindcss@3.3.3)
+    version: 0.5.11(tailwindcss@3.3.3)
   '@tsconfig/node18':
     specifier: ^18.2.2
     version: 18.2.4
@@ -837,10 +837,10 @@ packages:
     resolution: {integrity: sha512-+Fj43pSMwJs4KRrH/938Uf+uAELIgVBmQzg/q1YG10djyfA3TnrU8N8XzqCh/okZdszqBQTZf96idMfE5lnwTA==}
     dev: true
 
-  /@tailwindcss/forms@0.5.7(tailwindcss@3.3.3):
-    resolution: {integrity: sha512-QE7X69iQI+ZXwldE+rzasvbJiyV/ju1FGHH0Qn2W3FKbuYtqp8LKcy6iSw79fVUT5/Vvf+0XgLCeYVG+UV6hOw==}
+  /@tailwindcss/forms@0.5.11(tailwindcss@3.3.3):
+    resolution: {integrity: sha512-h9wegbZDPurxG22xZSoWtdzc41/OlNEUQERNqI/0fOwa2aVlWGu7C35E/x6LDyD3lgtztFSSjKZyuVM0hxhbgA==}
     peerDependencies:
-      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1'
+      tailwindcss: '>=3.0.0 || >= 3.0.0-alpha.1 || >= 4.0.0-alpha.20 || >= 4.0.0-beta.1'
     dependencies:
       mini-svg-data-uri: 1.4.4
       tailwindcss: 3.3.3
