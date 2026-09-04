@@ -7,7 +7,7 @@ settings:
 dependencies:
   '@chenfengyuan/vue-qrcode':
     specifier: ^2.0.0
-    version: 2.0.0(qrcode@1.5.3)(vue@3.3.4)
+    version: 2.0.0(qrcode@1.5.4)(vue@3.3.4)
   '@headlessui/vue':
     specifier: ^1.7.16
     version: 1.7.16(vue@3.3.4)
@@ -19,7 +19,7 @@ dependencies:
     version: 4.7.0
   qrcode:
     specifier: ^1.5.3
-    version: 1.5.3
+    version: 1.5.4
   vue:
     specifier: ^3.3.4
     version: 3.3.4
@@ -147,13 +147,13 @@ packages:
       '@babel/helper-validator-identifier': 7.22.20
       to-fast-properties: 2.0.0
 
-  /@chenfengyuan/vue-qrcode@2.0.0(qrcode@1.5.3)(vue@3.3.4):
+  /@chenfengyuan/vue-qrcode@2.0.0(qrcode@1.5.4)(vue@3.3.4):
     resolution: {integrity: sha512-33Cfr0zjbc3Dd8d5b1IgzXRAgXH0c2Gv19VI4snS25V/x9Z41eg769tC+Us1x+vqgQQhgD5YUjLnkpkrQfeMSw==}
     peerDependencies:
       qrcode: ^1.5.0
       vue: ^3.0.0
     dependencies:
-      qrcode: 1.5.3
+      qrcode: 1.5.4
       vue: 3.3.4
     dev: false
 
@@ -1818,10 +1818,6 @@ packages:
     resolution: {integrity: sha512-MSjYzcWNOA0ewAHpz0MxpYFvwg6yjy1NG3xteoqz644VCo/RPgnr1/GGt+ic3iJTzQ8Eu3TdM14SawnVUmGE6A==}
     dev: false
 
-  /encode-utf8@1.0.3:
-    resolution: {integrity: sha512-ucAnuBEhUK4boH2HjVYG5Q2mQyPorvv0u/ocS+zhdw0S8AlHYY+GOFhP1Gio5z4icpP2ivFSvhtFjQi8+T9ppw==}
-    dev: false
-
   /entities@4.5.0:
     resolution: {integrity: sha512-V0hjH4dGPh9Ao5p0MoRY6BVqtwCjhz6vI5LT8AJ55H+4g9/4vbHx1I54fS0XuclLhDHArPQCiMjDxjaL8fPxhw==}
     engines: {node: '>=0.12'}
@@ -3189,13 +3185,12 @@ packages:
     engines: {node: '>=6'}
     dev: true
 
-  /qrcode@1.5.3:
-    resolution: {integrity: sha512-puyri6ApkEHYiVl4CFzo1tDkAZ+ATcnbJrJ6RiBM1Fhctdn/ix9MTE3hRph33omisEbC/2fcfemsseiKgBPKZg==}
+  /qrcode@1.5.4:
+    resolution: {integrity: sha512-1ca71Zgiu6ORjHqFBDpnSMTR2ReToX4l1Au1VFLyVeBTFavzQnv5JxMFr3ukHVKpSrSA2MCk0lNJSykjUfz7Zg==}
     engines: {node: '>=10.13.0'}
     hasBin: true
     dependencies:
       dijkstrajs: 1.0.3
-      encode-utf8: 1.0.3
       pngjs: 5.0.0
       yargs: 15.4.1
     dev: false
